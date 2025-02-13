@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriConnect - Equipment Exchange & Rent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>AgriConnect - Equipment Exchange, Rent & Sale</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="price-monitoring.html">Price Monitoring</a></li>
+      <li><a href="learning-resources.html">Learning Resources</a></li>
+      <li><a href="iot-monitoring.html">IoT Monitoring</a></li>
+      <li><a href="user-management.html">User Management</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Exchange, Rent, and Sell Farming Equipment</h2>
+
+  <!-- Option to choose Exchange, Rent or Sell -->
+  <div class="options">
+    <button onclick="showForm('exchange')">Exchange Equipment</button>
+    <button onclick="showForm('rent')">Rent Equipment</button>
+    <button onclick="showForm('sell')">Sell Equipment</button>
+  </div>
+
+  <!-- Form for Equipment Exchange -->
+  <div id="exchangeForm" class="form-section" style="display: none;">
+    <h3>Exchange Equipment</h3>
+    <form id="exchangeEquipment">
+      <label for="exchangeProduct">Select Product:</label>
+      <select id="exchangeProduct" name="exchangeProduct">
+        <option value="tractor">Tractor</option>
+        <option value="harvester">Harvester</option>
+        <option value="plow">Plow</option>
+      </select>
+      
+      <label for="exchangeDistrict">Select District:</label>
+      <select id="exchangeDistrict" name="exchangeDistrict">
+        <option value="chittagong">Chittagong</option>
+        <option value="dhaka">Dhaka</option>
+        <option value="rajshahi">Rajshahi</option>
+      </select>
+      
+      <label for="exchangeDetails">Additional Details:</label>
+      <textarea id="exchangeDetails" name="exchangeDetails" placeholder="Enter details about the equipment you want to exchange..."></textarea>
+      
+      <button type="submit">Submit Exchange Request</button>
+    </form>
+  </div>
+
+  <!-- Form for Renting Equipment -->
+  <div id="rentForm" class="form-section" style="display: none;">
+    <h3>Rent Equipment</h3>
+    <form id="rentEquipment">
+      <label for="rentProduct">Select Product to Rent:</label>
+      <select id="rentProduct" name="rentProduct">
+        <option value="tractor">Tractor</option>
+        <option value="harvester">Harvester</option>
+        <option value="plow">Plow</option>
+      </select>
+      
+      <label for="rentDistrict">Select District:</label>
+      <select id="rentDistrict" name="rentDistrict">
+        <option value="chittagong">Chittagong</option>
+        <option value="dhaka">Dhaka</option>
+        <option value="rajshahi">Rajshahi</option>
+      </select>
+      
+      <label for="rentDuration">Rent Duration (in days):</label>
+      <input type="number" id="rentDuration" name="rentDuration" placeholder="Enter the number of days" min="1">
+      
+      <label for="rentPrice">Rent Price (per day):</label>
+      <input type="number" id="rentPrice" name="rentPrice" placeholder="Enter price per day" min="1">
+      
+      <label for="rentDetails">Additional Details:</label>
+      <textarea id="rentDetails" name="rentDetails" placeholder="Enter details about the equipment you want to rent..."></textarea>
+      
+      <button type="submit">Submit Rent Request</button>
+    </form>
+  </div>
+
+  <!-- Form for Selling Equipment -->
+  <div id="sellForm" class="form-section" style="display: none;">
+    <h3>Sell Equipment</h3>
+    <form id="sellEquipment">
+      <label for="sellProduct">Select Product to Sell:</label>
+      <select id="sellProduct" name="sellProduct">
+        <option value="tractor">Tractor</option>
+        <option value="harvester">Harvester</option>
+        <option value="plow">Plow</option>
+      </select>
+      
+      <label for="sellPrice">Sell Price:</label>
+      <input type="number" id="sellPrice" name="sellPrice" placeholder="Enter price for the equipment" min="1">
+      
+      <label for="sellDistrict">Select District:</label>
+      <select id="sellDistrict" name="sellDistrict">
+        <option value="chittagong">Chittagong</option>
+        <option value="dhaka">Dhaka</option>
+        <option value="rajshahi">Rajshahi</option>
+      </select>
+      
+      <label for="sellDetails">Additional Details:</label>
+      <textarea id="sellDetails" name="sellDetails" placeholder="Enter details about the equipment you want to sell..."></textarea>
+      
+      <button type="submit">Submit Sell Request</button>
+    </form>
+  </div>
+
+  <div id="message"></div>
+</div>
+
+<script>
+  // Show the corresponding form based on selected option (Exchange, Rent, or Sell)
+  function showForm(formType) {
+    document.getElementById('exchangeForm').style.display = 'none';
+    document.getElementById('rentForm').style.display = 'none';
+    document.getElementById('sellForm').style.display = 'none';
+
+    if (formType === 'exchange') {
+      document.getElementById('exchangeForm').style.display = 'block';
+    } else if (formType === 'rent') {
+      document.getElementById('rentForm').style.display = 'block';
+    } else if (formType === 'sell') {
+      document.getElementById('sellForm').style.display = 'block';
+    }
+  }
+
+  // Handle form submissions
+  document.getElementById('exchangeEquipment').onsubmit = function(event) {
+    event.preventDefault();
+    const message = 'Your equipment exchange request has been submitted.';
+    document.getElementById('message').textContent = message;
+  };
+
+  document.getElementById('rentEquipment').onsubmit = function(event) {
+    event.preventDefault();
+    const message = 'Your equipment rent request has been submitted.';
+    document.getElementById('message').textContent = message;
+  };
+
+  document.getElementById('sellEquipment').onsubmit = function(event) {
+    event.preventDefault();
+    const message = 'Your equipment sell request has been submitted.';
+    document.getElementById('message').textContent = message;
+  };
+</script>
+
+</body>
+</html>

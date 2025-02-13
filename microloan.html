@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriConnect - Microloan for Farming Staple Foods</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>AgriConnect - Microloan Application for Farming Staple Foods</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="price-monitoring.html">Price Monitoring</a></li>
+      <li><a href="learning-resources.html">Learning Resources</a></li>
+      <li><a href="iot-monitoring.html">IoT Monitoring</a></li>
+      <li><a href="user-management.html">User Management</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Apply for Microloan for Staple Food Farming</h2>
+  <p>Apply for a zero-interest loan to farm imported staple foods like wheat, onions, garlic, fruits, and vegetables. Farmers cultivating **local products** can also apply with a 3% interest rate. Choose your loan provider (NGO or Bank) and apply for the loan based on your farming needs.</p>
+
+  <form id="microloanForm">
+    <label for="loanType">Select Product Type:</label>
+    <select id="loanType" name="loanType" required>
+      <option value="imported">Imported Staple Food (Wheat, Onions, Garlic, Fruits, Vegetables)</option>
+      <option value="local">Local Farming Products</option>
+    </select>
+
+    <label for="loanAmount">Loan Amount (BDT):</label>
+    <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" min="1000" required>
+
+    <label for="loanDuration">Select Loan Duration:</label>
+    <select id="loanDuration" name="loanDuration" required>
+      <option value="3">3 Months</option>
+      <option value="6">6 Months</option>
+      <option value="12">1 Year</option>
+    </select>
+
+    <label for="interestRate">Interest Rate:</label>
+    <input type="text" id="interestRate" name="interestRate" readonly value="0%" required>
+
+    <label for="loanProvider">Select Loan Provider:</label>
+    <select id="loanProvider" name="loanProvider" required>
+      <option value="ngo">NGO</option>
+      <option value="bank">Bank</option>
+    </select>
+
+    <label for="additionalDetails">Additional Details (optional):</label>
+    <textarea id="additionalDetails" name="additionalDetails" placeholder="Enter any additional details..."></textarea>
+
+    <button type="submit">Apply for Loan</button>
+  </form>
+
+  <div id="confirmationMessage"></div>
+</div>
+
+<script>
+  // Handle microloan form submission
+  document.getElementById('microloanForm').onsubmit = function(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const loanType = document.getElementById('loanType').value;
+    const loanAmount = document.getElementById('loanAmount').value;
+    const loanDuration = document.getElementById('loanDuration').value;
+    const loanProvider = document.getElementById('loanProvider').value;
+    let interestRate = "0%";  // Default for imported staple food
+    
+    // Update interest rate for local farming products
+    if (loanType === "local") {
+      interestRate = "3%"; // Set interest rate for local farming
+    }
+    
+    // Show confirmation message
+    const confirmationMessage = `
+      <h3>Loan Application Submitted</h3>
+      <p>Loan Type: ${loanType === 'imported' ? 'Imported Staple Food' : 'Local Farming Products'}</p>
+      <p>Loan Amount: ${loanAmount} BDT</p>
+      <p>Loan Duration: ${loanDuration} month(s)</p>
+      <p>Interest Rate: ${interestRate}</p>
+      <p>Loan Provider: ${loanProvider === 'ngo' ? 'NGO' : 'Bank'}</p>
+      <p>Your application will be reviewed, and you will be notified once it is approved.</p>
+    `;
+    document.getElementById('confirmationMessage').innerHTML = confirmationMessage;
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Price Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for price charts -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AgriConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="price-monitoring.html">Price Monitoring</a></li>
+                <li><a href="equipment-exchange.html">Exchange, Rent, or Sell Equipment</a></li>
+                <li><a href="learning-resources.html">Learning Resources</a></li>
+                <li><a href="government-dashboard.html">Government Dashboard</a></li>
+                <li><a href="admin-market-monitoring.html">Market Monitoring</a></li>
+                <li><a href="smart-contracts.html">Smart Contracts</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="2.png" alt="User Profile" class="profile-icon">
+        </div>
+    </header>
+
+    <!-- Price Monitoring Section -->
+    <section class="price-monitoring">
+        <div class="search-bar">
+            <input type="text" id="productSearch" placeholder="Search by product (e.g., rice, vegetables)">
+            <button onclick="searchProduct()">Search</button>
+        </div>
+
+        <!-- Price Dashboard -->
+        <div class="price-dashboard">
+            <h2>Price Trends</h2>
+            <canvas id="priceChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Price Alerts -->
+        <div class="price-alerts">
+            <h3>Set Price Alerts</h3>
+            <label for="alert-product">Select Product:</label>
+            <input type="text" id="alert-product" placeholder="Enter product name">
+            <label for="alert-price">Set Price Threshold:</label>
+            <input type="number" id="alert-price" placeholder="Enter price threshold">
+            <button onclick="setPriceAlert()">Set Alert</button>
+        </div>
+
+        <!-- Historical Data -->
+        <div class="historical-data">
+            <h3>Historical Price Data</h3>
+            <p>View the historical data for the past week/month and compare prices over time.</p>
+            <button onclick="downloadData()">Download Data</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#account">Account Management</a> |
+            <a href="#settings">Settings</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

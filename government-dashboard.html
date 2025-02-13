@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Government Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for market graphs -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AgriConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="price-monitoring.html">Price Monitoring</a></li>
+                <li><a href="learning-resources.html">Learning Resources</a></li>
+                <li><a href="government-dashboard.html">Government Dashboard</a></li>
+                <li><a href="admin-market-monitoring.html">Market Monitoring</a></li> 
+                <li><a href="smart-contracts.html">Smart Contracts</a></li>
+                <li><a href="equipment-exchange.html">Exchange, Rent, or Sell Equipment</a></li> <!-- Active Page -->
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="2.png" alt="User Profile" class="profile-icon">
+        </div>
+    </header>
+
+    <!-- Government Dashboard Section -->
+    <section class="government-dashboard">
+        <div class="section-title">
+            <h1>Government Dashboard</h1>
+        </div>
+
+        <!-- Market Monitoring Section -->
+        <div class="market-monitoring">
+            <h2>Market Monitoring</h2>
+            <p>Real-time data on product prices, stock levels, and demand trends.</p>
+
+            <!-- Example Graph (Chart.js) -->
+            <div class="chart-container">
+                <canvas id="marketChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Alerts Section -->
+        <div class="alerts">
+            <h2>Alerts</h2>
+            <p>Quick access to any alerts raised about price manipulation, hoarding, or discrepancies.</p>
+
+            <!-- Alerts Table -->
+            <table class="alerts-table">
+                <thead>
+                    <tr>
+                        <th>Alert Type</th>
+                        <th>Product</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Price Manipulation</td>
+                        <td>Rice</td>
+                        <td>2025-02-10</td>
+                        <td>Resolved</td>
+                    </tr>
+                    <tr>
+                        <td>Hoarding</td>
+                        <td>Onions</td>
+                        <td>2025-02-09</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Discrepancy in Stock</td>
+                        <td>Wheat</td>
+                        <td>2025-02-08</td>
+                        <td>Under Investigation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Market Insights Section -->
+        <div class="market-insights">
+            <h2>Market Insights</h2>
+            <p>Detailed reports and analytics to help regulate and monitor agricultural markets effectively.</p>
+
+            <!-- Insights Report -->
+            <div class="insight-report">
+                <h3>Current Market Trends</h3>
+                <p>This section will provide detailed insights into the agricultural market trends, based on real-time data.</p>
+                <button onclick="viewFullReport()">View Full Report</button>
+            </div>
+        </div>
+
+        <!-- Regulatory Actions Section -->
+        <div class="regulatory-actions">
+            <h2>Regulatory Actions</h2>
+            <p>Actions taken by the government to regulate prices and enforce laws.</p>
+
+            <!-- Actions List -->
+            <ul>
+                <li><strong>Intervention in Rice Market</strong> - Prices controlled due to supply issues. (Feb 2025)</li>
+                <li><strong>Onion Price Regulation</strong> - Price cap imposed due to hoarding. (Jan 2025)</li>
+                <li><strong>Wheat Stock Verification</strong> - Investigating stock discrepancies in multiple regions. (Dec 2024)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#account">Account Management</a> |
+            <a href="#settings">Settings</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Include external JS file -->
+</body>
+</html>

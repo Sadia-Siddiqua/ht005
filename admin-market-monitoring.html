@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Admin Market Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AgriConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="price-monitoring.html">Price Monitoring</a></li>
+                <li><a href="learning-resources.html">Learning Resources</a></li>
+                <li><a href="admin-market-monitoring.html">Market Monitoring</a></li>
+                <li><a href="smart-contracts.html">Smart Contracts</a></li>
+                <li><a href="equipment-exchange.html">Exchange, Rent, or Sell Equipment</a></li> <!-- Active page -->
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="2.png" alt="User Profile" class="profile-icon">
+        </div>
+    </header>
+
+    <!-- Admin Dashboard Section -->
+    <section class="admin-dashboard">
+        <div class="container">
+            <h1>Admin Market Monitoring Dashboard</h1>
+            <p>Quick access to real-time market data and analytics for effective agricultural market regulation.</p>
+
+            <!-- Real-time Market Price Chart -->
+            <div class="market-chart">
+                <h2>Market Price Trends (Last 7 Days)</h2>
+                <canvas id="marketPriceChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- Product Inventory Table -->
+            <div class="product-inventory">
+                <h2>Product Inventory Status</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity in Stock</th>
+                            <th>Price (BDT)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryData">
+                        <!-- Inventory data will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Market Alerts Section -->
+            <div class="market-alerts">
+                <h2>Market Alerts</h2>
+                <ul id="alerts">
+                    <!-- Alert items will be inserted here dynamically -->
+                    <li>No alerts currently.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#account">Account Management</a> |
+            <a href="#settings">Settings</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Include external JS file -->
+</body>
+
+</html>

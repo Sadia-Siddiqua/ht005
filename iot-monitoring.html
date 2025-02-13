@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriConnect - IoT Monitoring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>AgriConnect - IoT Monitoring</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="price-monitoring.html">Price Monitoring</a></li>
+      <li><a href="learning-resources.html">Learning Resources</a></li>
+      <li><a href="iot-monitoring.html">IoT Monitoring</a></li>
+      <li><a href="user-management.html">User Management</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Sample IoT Data for Storage & Transportation</h2>
+  
+  <div class="data-section">
+    <!-- Storage Conditions -->
+    <div class="data-card">
+      <h3>Storage Conditions</h3>
+      <p>Temperature: <span id="storageTemp">25°C</span></p>
+      <p>Humidity: <span id="storageHumidity">60%</span></p>
+    </div>
+
+    <!-- Transportation Conditions -->
+    <div class="data-card">
+      <h3>Transportation Conditions</h3>
+      <p>Location: <span id="transportLocation">Chittagong</span></p>
+      <p>Temperature: <span id="transportTemp">18°C</span></p>
+    </div>
+    
+    <!-- Delivery Status -->
+    <div class="data-card">
+      <h3>Delivery Status</h3>
+      <p id="deliveryStatus">In Transit</p>
+    </div>
+  </div>
+
+  <button id="updateBtn">Update Data</button>
+  <button id="subscribeBtn">Subscribe for Climate Change Notifications</button>
+  
+  <div id="notificationContainer"></div>
+</div>
+
+<script>
+  let isSubscribed = false;
+  let notificationInterval;
+
+  // Function to simulate real-time data update for IoT sensors
+  function updateSensorData() {
+    const storageTemp = (Math.random() * (30 - 20) + 20).toFixed(2) + "°C"; 
+    const storageHumidity = (Math.random() * (80 - 50) + 50).toFixed(2) + "%"; 
+    
+    const transportLocation = "Dhaka"; 
+    const transportTemp = (Math.random() * (25 - 15) + 15).toFixed(2) + "°C"; 
+
+    // Update HTML content with new data
+    document.getElementById('storageTemp').textContent = storageTemp;
+    document.getElementById('storageHumidity').textContent = storageHumidity;
+    document.getElementById('transportLocation').textContent = transportLocation;
+    document.getElementById('transportTemp').textContent = transportTemp;
+
+    // Simulate status change
+    const statuses = ["In Transit", "Delivered", "Delayed"];
+    const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+    document.getElementById('deliveryStatus').textContent = randomStatus;
+  }
+
+  // Event listener to trigger data update
+  document.getElementById('updateBtn').addEventListener('click', updateSensorData);
+
+  // Function to subscribe to climate change notifications
+  function subscribeNotifications() {
+    if (isSubscribed) {
+      alert("You are already subscribed for climate change notifications.");
+      return;
+    }
+
+    isSubscribed = true;
+    document.getElementById('subscribeBtn').disabled = true;  // Disable button after subscription
+    alert("You have subscribed to climate change notifications.");
+
+    // Set up a notification every 3 hours
+    notificationInterval = setInterval(() => {
+      sendNotification();
+    }, 10800000);  // 10800000 ms = 3 hours
+  }
+
+  // Simulated function to send climate change notification
+  function sendNotification() {
+    const climateMessage = "Important: Extreme weather conditions expected soon. Please prepare your crops.";
+    const notificationContainer = document.getElementById('notificationContainer');
+    
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `<p>${climateMessage}</p>`;
+    
+    notificationContainer.appendChild(notification);
+  }
+
+  // Event listener to subscribe to climate change notifications
+  document.getElementById('subscribeBtn').addEventListener('click', subscribeNotifications);
+</script>
+
+</body>
+</html>

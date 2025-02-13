@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Settings</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <script src="script.js" defer></script> <!-- Include external JS file -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AgriConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="price-monitoring.html">Price Monitoring</a></li>
+                <li><a href="learning-resources.html">Learning Resources</a></li>
+                <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="2.png" alt="User Profile" class="profile-icon" onclick="toggleDropdown()">
+            <div id="profileDropdown" class="dropdown-content">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="settings.html">Settings</a>
+                <a href="logout.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Settings Section -->
+    <section class="settings">
+        <div class="container">
+            <h1>Account Settings</h1>
+            <p>Update your profile information, change your password, and manage your preferences.</p>
+
+            <!-- Profile Information Form -->
+            <div class="settings-form">
+                <h2>Profile Information</h2>
+                <form>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                    <button type="submit" class="cta-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Change Password Form -->
+            <div class="settings-form">
+                <h2>Change Password</h2>
+                <form>
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" name="current-password" placeholder="Enter your current password" required>
+
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter your new password" required>
+
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password" required>
+
+                    <button type="submit" class="cta-btn">Change Password</button>
+                </form>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="settings-form">
+                <h2>Preferences</h2>
+                <form>
+                    <label for="language">Preferred Language</label>
+                    <select id="language" name="language">
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                    </select>
+
+                    <label for="notifications">Email Notifications</label>
+                    <input type="checkbox" id="notifications" name="notifications" checked> Receive email notifications about important updates.
+
+                    <button type="submit" class="cta-btn">Save Preferences</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#account">Account Management</a> |
+            <a href="#settings">Settings</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

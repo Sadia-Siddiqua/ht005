@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Storage & Transportation Monitoring</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AgriConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="price-monitoring.html">Price Monitoring</a></li>
+                <li><a href="equipment-exchange.html">Exchange, Rent, or Sell Equipment</a></li>
+                <li><a href="learning-resources.html">Learning Resources</a></li>
+                <li><a href="government-dashboard.html">Government Dashboard</a></li>
+                <li><a href="admin-market-monitoring.html">Market Monitoring</a></li>
+                <li><a href="smart-contracts.html">Smart Contracts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Storage & Transportation Monitoring Section -->
+    <section class="storage-transportation">
+        <div class="container">
+            <h1>Storage & Transportation Monitoring using Blockchain</h1>
+            <p>Ensure the safety, transparency, and traceability of agricultural goods during storage and transportation with blockchain technology.</p>
+
+            <!-- Blockchain Interaction -->
+            <div class="blockchain-demo">
+                <h2>Blockchain Ledger Demo</h2>
+                <p>Click the button below to simulate a blockchain ledger entry for the storage and transportation of agricultural products:</p>
+                <button class="cta-btn" onclick="logTransaction()">Log Transaction</button>
+
+                <!-- Display Transaction -->
+                <div id="transactionResult" class="transaction-result" style="display: none;">
+                    <h3>Transaction Logged:</h3>
+                    <p id="transactionDetails">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#account">Account Management</a> |
+            <a href="#settings">Settings</a> |
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Include external JS file -->
+</body>
+
+</html>
